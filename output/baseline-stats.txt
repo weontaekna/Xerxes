@@ -1,0 +1,19 @@
+Host#0 stats: 
+ * Payload size: 64 bytes
+ * Issued packets: 6400
+ * Evict count: 0
+ * Hit count: 0
+ * Endpoint 2: 
+   - Bandwidth (GB/s): 1.27909
+   - Average latency (ns): 816.937
+   - Average wait for evict (ns): 0
+ * Endpoint 1: 
+   - Bandwidth (GB/s): 1.27909
+   - Average latency (ns): 830.113
+   - Average wait for evict (ns): 0
+ * Aggregate: 
+   - Bandwidth (GB/s): 2.55818
+   - Average latency (ns): 823.525
+   - Average wait for evict (ns): 0
+Switch-0#3 stats:
+Switch-1#4 stats:

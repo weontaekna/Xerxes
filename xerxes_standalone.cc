@@ -3,6 +3,7 @@
 #include "def.hh"
 #include "device.hh"
 #include "dramsim3_interface.hh"
+#include "orchestrator.hh"
 #include "requester.hh"
 #include "snoop.hh"
 #include "switch.hh"
@@ -103,6 +104,8 @@ bool events_empty() { return glb_engine.empty(); }
             ctx.requesters.push_back(dynamic_cast<Requester *>(dev));          \
         else if (type == "DRAMsim3Interface")                                  \
             ctx.mems.push_back(dynamic_cast<DRAMsim3Interface *>(dev));        \
+        else if (type == "Orchestrator")                                       \
+            ctx.orchestrators.push_back(dynamic_cast<Orchestrator *>(dev));    \
         auto id = dev->id();                                                   \
         ctx.name_to_id[pair.first] = id;                                       \
         XerxesLogger::debug()                                                  \
@@ -125,6 +128,7 @@ XerxesContext parse_config(std::string config_file_name) {
         BUILD_DEVICE(DuplexBus, DuplexBusConfig)
         BUILD_DEVICE(DRAMsim3Interface, DRAMsim3InterfaceConfig)
         BUILD_DEVICE(Snoop, SnoopConfig)
+        BUILD_DEVICE(Orchestrator, OrchestratorConfig)
         else {
             PANIC("Unknown device type: " + type);
         }
@@ -145,6 +149,12 @@ XerxesContext parse_config(std::string config_file_name) {
                                mem->wr_ratio());
         }
     }
+
+    // Initialize orchestrator workloads (resolve device names to IDs).
+    for (auto &orch : ctx.orchestrators) {
+        orch->init_workload(ctx.name_to_id);
+    }
+
     return ctx;
 }
 

@@ -1,0 +1,9 @@
+Orchestrator#2 stats:
+ * Total operations completed: 100
+ * Total blocks transferred: 6400
+ * Average op latency (ns): 165691
+ * Average blocks per op: 64
+ * Average decompose overhead (ns): 50
+ * Average schedule overhead per block (ns): 10
+Switch-0#3 stats:
+Switch-1#4 stats:

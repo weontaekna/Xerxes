@@ -96,3 +96,21 @@ class Switch(Device):
         self.params = {
             "delay": 1,
         }
+
+class Orchestrator(Device):
+    def __init__(self, name="Orchestrator"):
+        self.typename = "Orchestrator"
+        self.name = name
+        self.params = {
+            "decompose_delay": 50,
+            "schedule_delay": 10,
+            "cmd_queue_capacity": 64,
+            "max_outstanding": 32,
+            "block_size": 64,
+            "num_ops": 0,
+            "transfer_size": 4096,
+            "src_device": "",
+            "dst_device": "",
+            "src_base_addr": 0,
+            "dst_base_addr": 0,
+        }

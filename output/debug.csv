@@ -1,0 +1,113 @@
+Timeline transfer time: 50, delay 25
+Use scope 0-9223372036854775807
+Insert new scope 0-50
+Insert new scope 75-9223372036854775807
+delta stat "switch time" = 25
+Switch-0#3 transit packet 0 from 2 to 0 at 75
+Timeline transfer time: 60, delay 25
+Use scope 75-9223372036854775807
+Insert new scope 100-9223372036854775807
+delta stat "switch queue delay" = 15
+delta stat "switch time" = 25
+Switch-0#3 transit packet 1 from 2 to 0 at 100
+Timeline transfer time: 50, delay 25
+Skip scope 0-50
+Use scope 100-9223372036854775807
+Insert new scope 125-9223372036854775807
+delta stat "switch queue delay" = 50
+delta stat "switch time" = 25
+Switch-0#3 transit packet 2 from 2 to 0 at 125
+Timeline transfer time: 60, delay 25
+Use scope 125-9223372036854775807
+Insert new scope 150-9223372036854775807
+delta stat "switch queue delay" = 65
+delta stat "switch time" = 25
+Switch-0#3 transit packet 3 from 2 to 0 at 150
+Mem-0#0 receive packet 0 from 3 at 75
+delta stat "device process time" = 40
+Mem-0#0 receive packet 1 from 3 at 100
+delta stat "device process time" = 40
+Mem-0#0 receive packet 2 from 3 at 125
+delta stat "device process time" = 40
+Mem-0#0 receive packet 3 from 3 at 150
+delta stat "device process time" = 40
+Callback #0r at 164
+delta stat "dram time" = 49
+Callback #1r at 172
+delta stat "dram time" = 32
+Callback #2r at 192
+delta stat "dram time" = 27
+Timeline transfer time: 164, delay 25
+Use scope 0-9223372036854775807
+Insert new scope 0-164
+Insert new scope 189-9223372036854775807
+delta stat "switch time" = 25
+Switch-0#3 transit packet 0 from 0 to 2 at 189
+Timeline transfer time: 172, delay 25
+Use scope 189-9223372036854775807
+Insert new scope 214-9223372036854775807
+delta stat "switch queue delay" = 17
+delta stat "switch time" = 25
+Switch-0#3 transit packet 1 from 0 to 2 at 214
+Timeline transfer time: 192, delay 25
+Use scope 214-9223372036854775807
+Insert new scope 239-9223372036854775807
+delta stat "switch queue delay" = 22
+delta stat "switch time" = 25
+Switch-0#3 transit packet 2 from 0 to 2 at 239
+Orchestrator#2 issue D2D write pkt 4 for op 0 to dev 1 at 214
+Orchestrator#2 issue D2D write pkt 5 for op 0 to dev 1 at 224
+Timeline transfer time: 214, delay 25
+Use scope 0-9223372036854775807
+Insert new scope 0-214
+Insert new scope 239-9223372036854775807
+delta stat "switch time" = 25
+Switch-0#3 transit packet 4 from 2 to 1 at 239
+Timeline transfer time: 224, delay 25
+Use scope 239-9223372036854775807
+Insert new scope 264-9223372036854775807
+delta stat "switch queue delay" = 15
+delta stat "switch time" = 25
+Switch-0#3 transit packet 5 from 2 to 1 at 264
+Timeline transfer time: 239, delay 25
+Use scope 0-9223372036854775807
+Insert new scope 0-239
+Insert new scope 264-9223372036854775807
+delta stat "switch time" = 25
+Switch-1#4 transit packet 4 from 3 to 1 at 264
+Timeline transfer time: 264, delay 25
+Use scope 264-9223372036854775807
+Insert new scope 289-9223372036854775807
+delta stat "switch time" = 25
+Switch-1#4 transit packet 5 from 3 to 1 at 289
+Mem-1#1 receive packet 4 from 4 at 264
+delta stat "device process time" = 40
+Mem-1#1 receive packet 5 from 4 at 289
+delta stat "device process time" = 40
+Callback #4r at 305
+delta stat "dram time" = 1
+Callback #5r at 330
+delta stat "dram time" = 1
+Timeline transfer time: 305, delay 25
+Use scope 0-9223372036854775807
+Insert new scope 0-305
+Insert new scope 330-9223372036854775807
+delta stat "switch time" = 25
+Switch-1#4 transit packet 4 from 1 to 2 at 330
+Timeline transfer time: 330, delay 25
+Use scope 330-9223372036854775807
+Insert new scope 355-9223372036854775807
+delta stat "switch time" = 25
+Switch-1#4 transit packet 5 from 1 to 2 at 355
+Timeline transfer time: 330, delay 25
+Use scope 239-9223372036854775807
+Insert new scope 239-330
+Insert new scope 355-9223372036854775807
+delta stat "switch time" = 25
+Switch-0#3 transit packet 4 from 4 to 2 at 355
+Timeline transfer time: 355, delay 25
+Use scope 355-9223372036854775807
+Insert new scope 380-9223372036854775807
+delta stat "switch time" = 25
+Switch-0#3 transit packet 5 from 4 to 2 at 380
+Orchestrator#2 completed op 0 at 380 (latency: 380 ns)
