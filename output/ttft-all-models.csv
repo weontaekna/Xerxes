@@ -1,0 +1,165 @@
+model,tokens,system,kv_mb,t_prefill_ms,t_transfer_ms,t_decode_ms,ttft_ms,transfer_pct
+llama-70b,64,DCS-CXL (1 switch),20.0,8,4.15,15,27.15,15.3
+llama-70b,64,DCS-CXL (4 switches),20.0,8,1.05,15,24.05,4.4
+llama-70b,64,DCS-CXL (4 decode GPUs),20.0,8,0.30,15,23.30,1.3
+llama-70b,64,Baseline CXL (0ns oh),20.0,8,8.19,15,31.19,26.3
+llama-70b,64,Baseline CXL (100ns oh),20.0,8,32.77,15,55.77,58.8
+llama-70b,64,Baseline CXL (500ns oh),20.0,8,163.84,15,186.84,87.7
+llama-70b,64,RDMA (100Gbps),20.0,8,1.75,15,24.75,7.1
+llama-70b,64,RDMA (400Gbps),20.0,8,0.47,15,23.47,2.0
+llama-70b,64,TraCT (real CXL),20.0,8,2.10,15,25.10,8.4
+llama-70b,128,DCS-CXL (1 switch),40.0,15,8.31,15,38.31,21.7
+llama-70b,128,DCS-CXL (4 switches),40.0,15,2.10,15,32.10,6.5
+llama-70b,128,DCS-CXL (4 decode GPUs),40.0,15,0.60,15,30.60,2.0
+llama-70b,128,Baseline CXL (0ns oh),40.0,15,16.38,15,46.38,35.3
+llama-70b,128,Baseline CXL (100ns oh),40.0,15,65.54,15,95.54,68.6
+llama-70b,128,Baseline CXL (500ns oh),40.0,15,327.68,15,357.68,91.6
+llama-70b,128,RDMA (100Gbps),40.0,15,3.50,15,33.50,10.4
+llama-70b,128,RDMA (400Gbps),40.0,15,0.93,15,30.93,3.0
+llama-70b,128,TraCT (real CXL),40.0,15,4.19,15,34.19,12.3
+llama-70b,256,DCS-CXL (1 switch),80.0,28,16.61,15,59.61,27.9
+llama-70b,256,DCS-CXL (4 switches),80.0,28,4.19,15,47.19,8.9
+llama-70b,256,DCS-CXL (4 decode GPUs),80.0,28,1.20,15,44.20,2.7
+llama-70b,256,Baseline CXL (0ns oh),80.0,28,32.77,15,75.77,43.2
+llama-70b,256,Baseline CXL (100ns oh),80.0,28,131.07,15,174.07,75.3
+llama-70b,256,Baseline CXL (500ns oh),80.0,28,655.36,15,698.36,93.8
+llama-70b,256,RDMA (100Gbps),80.0,28,6.99,15,49.99,14.0
+llama-70b,256,RDMA (400Gbps),80.0,28,1.86,15,44.86,4.2
+llama-70b,256,TraCT (real CXL),80.0,28,8.39,15,51.39,16.3
+llama-70b,512,DCS-CXL (1 switch),160.0,55,33.22,15,103.22,32.2
+llama-70b,512,DCS-CXL (4 switches),160.0,55,8.39,15,78.39,10.7
+llama-70b,512,DCS-CXL (4 decode GPUs),160.0,55,2.40,15,72.40,3.3
+llama-70b,512,Baseline CXL (0ns oh),160.0,55,65.54,15,135.54,48.4
+llama-70b,512,Baseline CXL (100ns oh),160.0,55,262.14,15,332.14,78.9
+llama-70b,512,Baseline CXL (500ns oh),160.0,55,1310.72,15,1380.72,94.9
+llama-70b,512,RDMA (100Gbps),160.0,55,13.98,15,83.98,16.6
+llama-70b,512,RDMA (400Gbps),160.0,55,3.73,15,73.73,5.1
+llama-70b,512,TraCT (real CXL),160.0,55,16.78,15,86.78,19.3
+llama-70b,1024,DCS-CXL (1 switch),320.0,110,66.44,15,191.44,34.7
+llama-70b,1024,DCS-CXL (4 switches),320.0,110,16.78,15,141.78,11.8
+llama-70b,1024,DCS-CXL (4 decode GPUs),320.0,110,4.79,15,129.79,3.7
+llama-70b,1024,Baseline CXL (0ns oh),320.0,110,131.07,15,256.07,51.2
+llama-70b,1024,Baseline CXL (100ns oh),320.0,110,524.29,15,649.29,80.7
+llama-70b,1024,Baseline CXL (500ns oh),320.0,110,2621.44,15,2746.44,95.4
+llama-70b,1024,RDMA (100Gbps),320.0,110,27.96,15,152.96,18.3
+llama-70b,1024,RDMA (400Gbps),320.0,110,7.46,15,132.46,5.6
+llama-70b,1024,TraCT (real CXL),320.0,110,33.55,15,158.55,21.2
+llama-70b,2048,DCS-CXL (1 switch),640.0,220,132.89,15,367.89,36.1
+llama-70b,2048,DCS-CXL (4 switches),640.0,220,33.55,15,268.55,12.5
+llama-70b,2048,DCS-CXL (4 decode GPUs),640.0,220,9.59,15,244.59,3.9
+llama-70b,2048,Baseline CXL (0ns oh),640.0,220,262.14,15,497.14,52.7
+llama-70b,2048,Baseline CXL (100ns oh),640.0,220,1048.58,15,1283.58,81.7
+llama-70b,2048,Baseline CXL (500ns oh),640.0,220,5242.88,15,5477.88,95.7
+llama-70b,2048,RDMA (100Gbps),640.0,220,55.92,15,290.92,19.2
+llama-70b,2048,RDMA (400Gbps),640.0,220,14.91,15,249.91,6.0
+llama-70b,2048,TraCT (real CXL),640.0,220,67.11,15,302.11,22.2
+model,tokens,system,kv_mb,t_prefill_ms,t_transfer_ms,t_decode_ms,ttft_ms,transfer_pct
+llama-13b,64,DCS-CXL (1 switch),50.0,3,10.38,5,18.38,56.5
+llama-13b,64,DCS-CXL (4 switches),50.0,3,2.62,5,10.62,24.7
+llama-13b,64,DCS-CXL (4 decode GPUs),50.0,3,0.75,5,8.75,8.6
+llama-13b,64,Baseline CXL (0ns oh),50.0,3,20.48,5,28.48,71.9
+llama-13b,64,Baseline CXL (100ns oh),50.0,3,81.92,5,89.92,91.1
+llama-13b,64,Baseline CXL (500ns oh),50.0,3,409.60,5,417.60,98.1
+llama-13b,64,RDMA (100Gbps),50.0,3,4.37,5,12.37,35.3
+llama-13b,64,RDMA (400Gbps),50.0,3,1.17,5,9.17,12.7
+llama-13b,64,TraCT (real CXL),50.0,3,5.24,5,13.24,39.6
+llama-13b,128,DCS-CXL (1 switch),100.0,5,20.76,5,30.76,67.5
+llama-13b,128,DCS-CXL (4 switches),100.0,5,5.24,5,15.24,34.4
+llama-13b,128,DCS-CXL (4 decode GPUs),100.0,5,1.50,5,11.50,13.0
+llama-13b,128,Baseline CXL (0ns oh),100.0,5,40.96,5,50.96,80.4
+llama-13b,128,Baseline CXL (100ns oh),100.0,5,163.84,5,173.84,94.2
+llama-13b,128,Baseline CXL (500ns oh),100.0,5,819.20,5,829.20,98.8
+llama-13b,128,RDMA (100Gbps),100.0,5,8.74,5,18.74,46.6
+llama-13b,128,RDMA (400Gbps),100.0,5,2.33,5,12.33,18.9
+llama-13b,128,TraCT (real CXL),100.0,5,10.49,5,20.49,51.2
+llama-13b,256,DCS-CXL (1 switch),200.0,10,41.53,5,56.53,73.5
+llama-13b,256,DCS-CXL (4 switches),200.0,10,10.49,5,25.49,41.1
+llama-13b,256,DCS-CXL (4 decode GPUs),200.0,10,3.00,5,18.00,16.6
+llama-13b,256,Baseline CXL (0ns oh),200.0,10,81.92,5,96.92,84.5
+llama-13b,256,Baseline CXL (100ns oh),200.0,10,327.68,5,342.68,95.6
+llama-13b,256,Baseline CXL (500ns oh),200.0,10,1638.40,5,1653.40,99.1
+llama-13b,256,RDMA (100Gbps),200.0,10,17.48,5,32.48,53.8
+llama-13b,256,RDMA (400Gbps),200.0,10,4.66,5,19.66,23.7
+llama-13b,256,TraCT (real CXL),200.0,10,20.97,5,35.97,58.3
+llama-13b,512,DCS-CXL (1 switch),400.0,18,83.06,5,106.06,78.3
+llama-13b,512,DCS-CXL (4 switches),400.0,18,20.97,5,43.97,47.7
+llama-13b,512,DCS-CXL (4 decode GPUs),400.0,18,5.99,5,28.99,20.7
+llama-13b,512,Baseline CXL (0ns oh),400.0,18,163.84,5,186.84,87.7
+llama-13b,512,Baseline CXL (100ns oh),400.0,18,655.36,5,678.36,96.6
+llama-13b,512,Baseline CXL (500ns oh),400.0,18,3276.80,5,3299.80,99.3
+llama-13b,512,RDMA (100Gbps),400.0,18,34.95,5,57.95,60.3
+llama-13b,512,RDMA (400Gbps),400.0,18,9.32,5,32.32,28.8
+llama-13b,512,TraCT (real CXL),400.0,18,41.94,5,64.94,64.6
+llama-13b,1024,DCS-CXL (1 switch),800.0,35,166.11,5,206.11,80.6
+llama-13b,1024,DCS-CXL (4 switches),800.0,35,41.94,5,81.94,51.2
+llama-13b,1024,DCS-CXL (4 decode GPUs),800.0,35,11.98,5,51.98,23.1
+llama-13b,1024,Baseline CXL (0ns oh),800.0,35,327.68,5,367.68,89.1
+llama-13b,1024,Baseline CXL (100ns oh),800.0,35,1310.72,5,1350.72,97.0
+llama-13b,1024,Baseline CXL (500ns oh),800.0,35,6553.60,5,6593.60,99.4
+llama-13b,1024,RDMA (100Gbps),800.0,35,69.91,5,109.91,63.6
+llama-13b,1024,RDMA (400Gbps),800.0,35,18.64,5,58.64,31.8
+llama-13b,1024,TraCT (real CXL),800.0,35,83.89,5,123.89,67.7
+llama-13b,2048,DCS-CXL (1 switch),1600.0,70,332.22,5,407.22,81.6
+llama-13b,2048,DCS-CXL (4 switches),1600.0,70,83.89,5,158.89,52.8
+llama-13b,2048,DCS-CXL (4 decode GPUs),1600.0,70,23.97,5,98.97,24.2
+llama-13b,2048,Baseline CXL (0ns oh),1600.0,70,655.36,5,730.36,89.7
+llama-13b,2048,Baseline CXL (100ns oh),1600.0,70,2621.44,5,2696.44,97.2
+llama-13b,2048,Baseline CXL (500ns oh),1600.0,70,13107.20,5,13182.20,99.4
+llama-13b,2048,RDMA (100Gbps),1600.0,70,139.81,5,214.81,65.1
+llama-13b,2048,RDMA (400Gbps),1600.0,70,37.28,5,112.28,33.2
+llama-13b,2048,TraCT (real CXL),1600.0,70,167.77,5,242.77,69.1
+model,tokens,system,kv_mb,t_prefill_ms,t_transfer_ms,t_decode_ms,ttft_ms,transfer_pct
+llama-7b,64,DCS-CXL (1 switch),32.0,2,6.64,3,11.64,57.1
+llama-7b,64,DCS-CXL (4 switches),32.0,2,1.68,3,6.68,25.1
+llama-7b,64,DCS-CXL (4 decode GPUs),32.0,2,0.48,3,5.48,8.7
+llama-7b,64,Baseline CXL (0ns oh),32.0,2,13.11,3,18.11,72.4
+llama-7b,64,Baseline CXL (100ns oh),32.0,2,52.43,3,57.43,91.3
+llama-7b,64,Baseline CXL (500ns oh),32.0,2,262.14,3,267.14,98.1
+llama-7b,64,RDMA (100Gbps),32.0,2,2.80,3,7.80,35.9
+llama-7b,64,RDMA (400Gbps),32.0,2,0.75,3,5.75,13.0
+llama-7b,64,TraCT (real CXL),32.0,2,3.36,3,8.36,40.2
+llama-7b,128,DCS-CXL (1 switch),64.0,3,13.29,3,19.29,68.9
+llama-7b,128,DCS-CXL (4 switches),64.0,3,3.36,3,9.36,35.9
+llama-7b,128,DCS-CXL (4 decode GPUs),64.0,3,0.96,3,6.96,13.8
+llama-7b,128,Baseline CXL (0ns oh),64.0,3,26.21,3,32.21,81.4
+llama-7b,128,Baseline CXL (100ns oh),64.0,3,104.86,3,110.86,94.6
+llama-7b,128,Baseline CXL (500ns oh),64.0,3,524.29,3,530.29,98.9
+llama-7b,128,RDMA (100Gbps),64.0,3,5.59,3,11.59,48.2
+llama-7b,128,RDMA (400Gbps),64.0,3,1.49,3,7.49,19.9
+llama-7b,128,TraCT (real CXL),64.0,3,6.71,3,12.71,52.8
+llama-7b,256,DCS-CXL (1 switch),128.0,6,26.58,3,35.58,74.7
+llama-7b,256,DCS-CXL (4 switches),128.0,6,6.71,3,15.71,42.7
+llama-7b,256,DCS-CXL (4 decode GPUs),128.0,6,1.92,3,10.92,17.6
+llama-7b,256,Baseline CXL (0ns oh),128.0,6,52.43,3,61.43,85.3
+llama-7b,256,Baseline CXL (100ns oh),128.0,6,209.72,3,218.72,95.9
+llama-7b,256,Baseline CXL (500ns oh),128.0,6,1048.58,3,1057.58,99.1
+llama-7b,256,RDMA (100Gbps),128.0,6,11.18,3,20.18,55.4
+llama-7b,256,RDMA (400Gbps),128.0,6,2.98,3,11.98,24.9
+llama-7b,256,TraCT (real CXL),128.0,6,13.42,3,22.42,59.9
+llama-7b,512,DCS-CXL (1 switch),256.0,12,53.16,3,68.16,78.0
+llama-7b,512,DCS-CXL (4 switches),256.0,12,13.42,3,28.42,47.2
+llama-7b,512,DCS-CXL (4 decode GPUs),256.0,12,3.83,3,18.83,20.4
+llama-7b,512,Baseline CXL (0ns oh),256.0,12,104.86,3,119.86,87.5
+llama-7b,512,Baseline CXL (100ns oh),256.0,12,419.43,3,434.43,96.5
+llama-7b,512,Baseline CXL (500ns oh),256.0,12,2097.15,3,2112.15,99.3
+llama-7b,512,RDMA (100Gbps),256.0,12,22.37,3,37.37,59.9
+llama-7b,512,RDMA (400Gbps),256.0,12,5.97,3,20.97,28.5
+llama-7b,512,TraCT (real CXL),256.0,12,26.84,3,41.84,64.2
+llama-7b,1024,DCS-CXL (1 switch),512.0,22,106.31,3,131.31,81.0
+llama-7b,1024,DCS-CXL (4 switches),512.0,22,26.84,3,51.84,51.8
+llama-7b,1024,DCS-CXL (4 decode GPUs),512.0,22,7.67,3,32.67,23.5
+llama-7b,1024,Baseline CXL (0ns oh),512.0,22,209.72,3,234.72,89.3
+llama-7b,1024,Baseline CXL (100ns oh),512.0,22,838.86,3,863.86,97.1
+llama-7b,1024,Baseline CXL (500ns oh),512.0,22,4194.30,3,4219.30,99.4
+llama-7b,1024,RDMA (100Gbps),512.0,22,44.74,3,69.74,64.2
+llama-7b,1024,RDMA (400Gbps),512.0,22,11.93,3,36.93,32.3
+llama-7b,1024,TraCT (real CXL),512.0,22,53.69,3,78.69,68.2
+llama-7b,2048,DCS-CXL (1 switch),1024.0,45,212.62,3,260.62,81.6
+llama-7b,2048,DCS-CXL (4 switches),1024.0,45,53.69,3,101.69,52.8
+llama-7b,2048,DCS-CXL (4 decode GPUs),1024.0,45,15.34,3,63.34,24.2
+llama-7b,2048,Baseline CXL (0ns oh),1024.0,45,419.43,3,467.43,89.7
+llama-7b,2048,Baseline CXL (100ns oh),1024.0,45,1677.72,3,1725.72,97.2
+llama-7b,2048,Baseline CXL (500ns oh),1024.0,45,8388.61,3,8436.61,99.4
+llama-7b,2048,RDMA (100Gbps),1024.0,45,89.48,3,137.48,65.1
+llama-7b,2048,RDMA (400Gbps),1024.0,45,23.86,3,71.86,33.2
+llama-7b,2048,TraCT (real CXL),1024.0,45,107.37,3,155.37,69.1

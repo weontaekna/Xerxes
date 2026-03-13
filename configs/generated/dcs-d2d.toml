@@ -58,6 +58,7 @@ schedule_delay = 10
 cmd_queue_capacity = 64
 max_outstanding = 32
 block_size = 64
+pipeline = false
 num_ops = 100
 transfer_size = 4096
 src_device = "Mem-0"

@@ -1,0 +1,69 @@
+max_clock = 500000000
+clock_granu = 1
+log_level = "INFO"
+log_name = "output/llm-baseline-llama-70b-t8-d1.csv"
+edges = [
+    [
+        "Host",
+        "Switch-0",
+    ],
+    [
+        "Switch-0",
+        "PrefillGPU",
+    ],
+    [
+        "Switch-1",
+        "DecodeGPU-0",
+    ],
+    [
+        "Switch-0",
+        "Switch-1",
+    ],
+]
+
+[devices]
+PrefillGPU = "DRAMsim3Interface"
+Switch-0 = "Switch"
+Switch-1 = "Switch"
+Host = "Requester"
+DecodeGPU-0 = "DRAMsim3Interface"
+
+[PrefillGPU]
+tick_per_clock = 1
+process_time = 40
+start = 0
+capacity = 17179869184
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Switch-0]
+delay = 25
+
+[Switch-1]
+delay = 25
+
+[Host]
+q_capacity = 32
+cache_capacity = 8192
+cache_delay = 12
+issue_delay = 0
+coherent = false
+burst_size = 1
+block_size = 64
+interleave_type = "stream"
+interleave_param = 40960
+hot_req_ratio = 0.5
+hot_region_ratio = 0.5
+trace_file = ""
+
+[DecodeGPU-0]
+tick_per_clock = 1
+process_time = 40
+start = 17179869184
+capacity = 17179869184
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+

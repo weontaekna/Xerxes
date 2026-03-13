@@ -1,4 +1,5 @@
 Orchestrator#2 stats:
+ * Mode: serialized
  * Total operations completed: 100
  * Total blocks transferred: 6400
  * Average op latency (ns): 165691

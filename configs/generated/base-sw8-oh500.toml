@@ -1,0 +1,313 @@
+max_clock = 100000000
+clock_granu = 1
+log_level = "INFO"
+log_name = "/dev/null"
+edges = [
+    [
+        "Host",
+        "Switch-0",
+    ],
+    [
+        "Switch-0",
+        "SrcMem-0",
+    ],
+    [
+        "Switch-0",
+        "DstMem-0",
+    ],
+    [
+        "Switch-1",
+        "SrcMem-1",
+    ],
+    [
+        "Switch-1",
+        "DstMem-1",
+    ],
+    [
+        "Switch-2",
+        "SrcMem-2",
+    ],
+    [
+        "Switch-2",
+        "DstMem-2",
+    ],
+    [
+        "Switch-3",
+        "SrcMem-3",
+    ],
+    [
+        "Switch-3",
+        "DstMem-3",
+    ],
+    [
+        "Switch-4",
+        "SrcMem-4",
+    ],
+    [
+        "Switch-4",
+        "DstMem-4",
+    ],
+    [
+        "Switch-5",
+        "SrcMem-5",
+    ],
+    [
+        "Switch-5",
+        "DstMem-5",
+    ],
+    [
+        "Switch-6",
+        "SrcMem-6",
+    ],
+    [
+        "Switch-6",
+        "DstMem-6",
+    ],
+    [
+        "Switch-7",
+        "SrcMem-7",
+    ],
+    [
+        "Switch-7",
+        "DstMem-7",
+    ],
+    [
+        "Switch-0",
+        "Switch-1",
+    ],
+    [
+        "Switch-1",
+        "Switch-2",
+    ],
+    [
+        "Switch-2",
+        "Switch-3",
+    ],
+    [
+        "Switch-3",
+        "Switch-4",
+    ],
+    [
+        "Switch-4",
+        "Switch-5",
+    ],
+    [
+        "Switch-5",
+        "Switch-6",
+    ],
+    [
+        "Switch-6",
+        "Switch-7",
+    ],
+]
+
+[devices]
+SrcMem-0 = "DRAMsim3Interface"
+SrcMem-1 = "DRAMsim3Interface"
+SrcMem-2 = "DRAMsim3Interface"
+SrcMem-3 = "DRAMsim3Interface"
+SrcMem-4 = "DRAMsim3Interface"
+SrcMem-5 = "DRAMsim3Interface"
+SrcMem-6 = "DRAMsim3Interface"
+SrcMem-7 = "DRAMsim3Interface"
+DstMem-0 = "DRAMsim3Interface"
+DstMem-1 = "DRAMsim3Interface"
+DstMem-2 = "DRAMsim3Interface"
+DstMem-3 = "DRAMsim3Interface"
+DstMem-4 = "DRAMsim3Interface"
+DstMem-5 = "DRAMsim3Interface"
+DstMem-6 = "DRAMsim3Interface"
+DstMem-7 = "DRAMsim3Interface"
+Switch-0 = "Switch"
+Switch-1 = "Switch"
+Switch-2 = "Switch"
+Switch-3 = "Switch"
+Switch-4 = "Switch"
+Switch-5 = "Switch"
+Switch-6 = "Switch"
+Switch-7 = "Switch"
+Host = "Requester"
+
+[SrcMem-0]
+tick_per_clock = 1
+process_time = 40
+start = 0
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SrcMem-1]
+tick_per_clock = 1
+process_time = 40
+start = 2147483648
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SrcMem-2]
+tick_per_clock = 1
+process_time = 40
+start = 4294967296
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SrcMem-3]
+tick_per_clock = 1
+process_time = 40
+start = 6442450944
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SrcMem-4]
+tick_per_clock = 1
+process_time = 40
+start = 8589934592
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SrcMem-5]
+tick_per_clock = 1
+process_time = 40
+start = 10737418240
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SrcMem-6]
+tick_per_clock = 1
+process_time = 40
+start = 12884901888
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SrcMem-7]
+tick_per_clock = 1
+process_time = 40
+start = 15032385536
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DstMem-0]
+tick_per_clock = 1
+process_time = 40
+start = 1073741824
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DstMem-1]
+tick_per_clock = 1
+process_time = 40
+start = 3221225472
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DstMem-2]
+tick_per_clock = 1
+process_time = 40
+start = 5368709120
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DstMem-3]
+tick_per_clock = 1
+process_time = 40
+start = 7516192768
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DstMem-4]
+tick_per_clock = 1
+process_time = 40
+start = 9663676416
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DstMem-5]
+tick_per_clock = 1
+process_time = 40
+start = 11811160064
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DstMem-6]
+tick_per_clock = 1
+process_time = 40
+start = 13958643712
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DstMem-7]
+tick_per_clock = 1
+process_time = 40
+start = 16106127360
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Switch-0]
+delay = 25
+
+[Switch-1]
+delay = 25
+
+[Switch-2]
+delay = 25
+
+[Switch-3]
+delay = 25
+
+[Switch-4]
+delay = 25
+
+[Switch-5]
+delay = 25
+
+[Switch-6]
+delay = 25
+
+[Switch-7]
+delay = 25
+
+[Host]
+q_capacity = 32
+cache_capacity = 8192
+cache_delay = 12
+issue_delay = 500
+coherent = false
+burst_size = 1
+block_size = 64
+interleave_type = "stream"
+interleave_param = 25600
+hot_req_ratio = 0.5
+hot_region_ratio = 0.5
+trace_file = ""
+
+

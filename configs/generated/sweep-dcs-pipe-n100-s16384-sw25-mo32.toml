@@ -1,0 +1,71 @@
+max_clock = 50000000
+clock_granu = 1
+log_level = "INFO"
+log_name = "/home/weontaek.na/wspace/sglang/assets/mit/dcs_nxt/dcs_nxt_cxl/experiments/sim/ESF/output/sweep-dcs-pipe-n100-s16384-sw25-mo32.csv"
+edges = [
+    [
+        "Orchestrator",
+        "Switch-0",
+    ],
+    [
+        "Switch-0",
+        "Mem-0",
+    ],
+    [
+        "Switch-1",
+        "Mem-1",
+    ],
+    [
+        "Switch-0",
+        "Switch-1",
+    ],
+]
+
+[devices]
+Mem-0 = "DRAMsim3Interface"
+Mem-1 = "DRAMsim3Interface"
+Switch-0 = "Switch"
+Switch-1 = "Switch"
+Orchestrator = "Orchestrator"
+
+[Mem-0]
+tick_per_clock = 1
+process_time = 40
+start = 0
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Mem-1]
+tick_per_clock = 1
+process_time = 40
+start = 1073741824
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Switch-0]
+delay = 25
+
+[Switch-1]
+delay = 25
+
+[Orchestrator]
+decompose_delay = 50
+schedule_delay = 10
+cmd_queue_capacity = 64
+max_outstanding = 32
+max_outstanding_reads = 32
+max_outstanding_writes = 32
+block_size = 64
+pipeline = true
+num_ops = 100
+transfer_size = 16384
+src_device = "Mem-0"
+dst_device = "Mem-1"
+src_base_addr = 0
+dst_base_addr = 1073741824
+
+

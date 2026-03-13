@@ -1,0 +1,112 @@
+max_clock = 500000000
+clock_granu = 1
+log_level = "INFO"
+log_name = "output/storage-dcs-qd16.csv"
+edges = [
+    [
+        "Switch-0",
+        "SSD-0",
+    ],
+    [
+        "Switch-0",
+        "NIC-0",
+    ],
+    [
+        "Orch-0",
+        "Switch-0",
+    ],
+    [
+        "Switch-0",
+        "SSD-1",
+    ],
+    [
+        "Switch-0",
+        "NIC-1",
+    ],
+    [
+        "Orch-1",
+        "Switch-0",
+    ],
+]
+
+[devices]
+Switch-0 = "Switch"
+SSD-0 = "DRAMsim3Interface"
+NIC-0 = "DRAMsim3Interface"
+Orch-0 = "Orchestrator"
+SSD-1 = "DRAMsim3Interface"
+NIC-1 = "DRAMsim3Interface"
+Orch-1 = "Orchestrator"
+
+[Switch-0]
+delay = 25
+
+[SSD-0]
+tick_per_clock = 1
+process_time = 500
+start = 0
+capacity = 4294967296
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[NIC-0]
+tick_per_clock = 1
+process_time = 40
+start = 4294967296
+capacity = 4294967296
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Orch-0]
+decompose_delay = 50
+schedule_delay = 10
+cmd_queue_capacity = 32
+max_outstanding = 16
+max_outstanding_reads = 16
+max_outstanding_writes = 16
+block_size = 4096
+pipeline = true
+num_ops = 500
+transfer_size = 4096
+src_device = "SSD-0"
+dst_device = "NIC-0"
+src_base_addr = 0
+dst_base_addr = 4294967296
+
+[SSD-1]
+tick_per_clock = 1
+process_time = 500
+start = 8589934592
+capacity = 4294967296
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[NIC-1]
+tick_per_clock = 1
+process_time = 40
+start = 12884901888
+capacity = 4294967296
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Orch-1]
+decompose_delay = 50
+schedule_delay = 10
+cmd_queue_capacity = 32
+max_outstanding = 16
+max_outstanding_reads = 16
+max_outstanding_writes = 16
+block_size = 4096
+pipeline = true
+num_ops = 500
+transfer_size = 4096
+src_device = "SSD-1"
+dst_device = "NIC-1"
+src_base_addr = 8589934592
+dst_base_addr = 12884901888
+
+

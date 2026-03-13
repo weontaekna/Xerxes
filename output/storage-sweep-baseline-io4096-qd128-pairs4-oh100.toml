@@ -1,0 +1,145 @@
+max_clock = 500000000
+clock_granu = 1
+log_level = "INFO"
+log_name = "/home/weontaek.na/wspace/sglang/assets/mit/dcs_nxt/dcs_nxt_cxl/experiments/sim/ESF/output/storage-sweep-baseline-io4096-qd128-pairs4-oh100.csv"
+edges = [
+    [
+        "Host",
+        "Switch-0",
+    ],
+    [
+        "Switch-0",
+        "SSD-0",
+    ],
+    [
+        "Switch-0",
+        "NIC-0",
+    ],
+    [
+        "Switch-0",
+        "SSD-1",
+    ],
+    [
+        "Switch-0",
+        "NIC-1",
+    ],
+    [
+        "Switch-0",
+        "SSD-2",
+    ],
+    [
+        "Switch-0",
+        "NIC-2",
+    ],
+    [
+        "Switch-0",
+        "SSD-3",
+    ],
+    [
+        "Switch-0",
+        "NIC-3",
+    ],
+]
+
+[devices]
+Switch-0 = "Switch"
+SSD-0 = "DRAMsim3Interface"
+NIC-0 = "DRAMsim3Interface"
+SSD-1 = "DRAMsim3Interface"
+NIC-1 = "DRAMsim3Interface"
+SSD-2 = "DRAMsim3Interface"
+NIC-2 = "DRAMsim3Interface"
+SSD-3 = "DRAMsim3Interface"
+NIC-3 = "DRAMsim3Interface"
+Host = "Requester"
+
+[Switch-0]
+delay = 25
+
+[SSD-0]
+tick_per_clock = 1
+process_time = 500
+start = 0
+capacity = 4294967296
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[NIC-0]
+tick_per_clock = 1
+process_time = 40
+start = 4294967296
+capacity = 4294967296
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SSD-1]
+tick_per_clock = 1
+process_time = 500
+start = 8589934592
+capacity = 4294967296
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[NIC-1]
+tick_per_clock = 1
+process_time = 40
+start = 12884901888
+capacity = 4294967296
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SSD-2]
+tick_per_clock = 1
+process_time = 500
+start = 17179869184
+capacity = 4294967296
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[NIC-2]
+tick_per_clock = 1
+process_time = 40
+start = 21474836480
+capacity = 4294967296
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[SSD-3]
+tick_per_clock = 1
+process_time = 500
+start = 25769803776
+capacity = 4294967296
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[NIC-3]
+tick_per_clock = 1
+process_time = 40
+start = 30064771072
+capacity = 4294967296
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Host]
+q_capacity = 128
+cache_capacity = 8192
+cache_delay = 12
+issue_delay = 100
+coherent = false
+burst_size = 1
+block_size = 4096
+interleave_type = "stream"
+interleave_param = 2000
+hot_req_ratio = 0.5
+hot_region_ratio = 0.5
+trace_file = ""
+
+

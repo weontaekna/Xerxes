@@ -1,0 +1,11 @@
+id,type,memid,addr,send,arrive,bus_queuing,bus_time,switch_queuing,switch_time,snoop_evict,host_inv,dram_queuing,dram_time,total_time
+0,Non-temporal read,1,0,0,189,0,0,0,100,0,0,0,49,189
+2,Non-temporal read,1,40,0,239,0,0,72,100,0,0,0,27,239
+4,Non-temporal read,1,80,0,289,0,0,122,100,0,0,0,27,289
+1,Non-temporal write,2,40000000,0,339,0,0,98,200,0,0,0,1,339
+6,Non-temporal read,1,c0,0,389,0,0,222,100,0,0,0,27,389
+3,Non-temporal write,2,40000040,0,439,0,0,198,200,0,0,0,1,439
+5,Non-temporal write,2,40000080,0,489,0,0,248,200,0,0,0,1,489
+8,Non-temporal read,1,100,0,539,0,0,372,100,0,0,0,27,539
+7,Non-temporal write,2,400000c0,0,589,0,0,348,200,0,0,0,1,589
+9,Non-temporal write,2,40000100,189,639,0,0,209,200,0,0,0,1,450

@@ -1,0 +1,184 @@
+# Model: llama-7b
+# KV cache per token per layer: 16384 bytes
+# Total KV cache: 256.0 MB
+# Transfer size per op: 65536.0 KB
+# Number of ops: 16
+# Block size: 4096 bytes
+# Total blocks: 262144
+# Host overhead: 0 ns (baseline only)
+max_clock = 500000000
+clock_granu = 1
+log_level = "INFO"
+log_name = "output/llm-dcs-llama-7b-t512-d4-b4096.csv"
+edges = [
+    [
+        "Switch-0",
+        "PrefillGPU",
+    ],
+    [
+        "Orch-0",
+        "Switch-0",
+    ],
+    [
+        "Orch-1",
+        "Switch-0",
+    ],
+    [
+        "Orch-2",
+        "Switch-0",
+    ],
+    [
+        "Orch-3",
+        "Switch-0",
+    ],
+    [
+        "Switch-1",
+        "DecodeGPU-0",
+    ],
+    [
+        "Switch-1",
+        "DecodeGPU-1",
+    ],
+    [
+        "Switch-1",
+        "DecodeGPU-2",
+    ],
+    [
+        "Switch-1",
+        "DecodeGPU-3",
+    ],
+    [
+        "Switch-0",
+        "Switch-1",
+    ],
+]
+
+[devices]
+PrefillGPU = "DRAMsim3Interface"
+Switch-0 = "Switch"
+Switch-1 = "Switch"
+DecodeGPU-0 = "DRAMsim3Interface"
+DecodeGPU-1 = "DRAMsim3Interface"
+DecodeGPU-2 = "DRAMsim3Interface"
+DecodeGPU-3 = "DRAMsim3Interface"
+Orch-0 = "Orchestrator"
+Orch-1 = "Orchestrator"
+Orch-2 = "Orchestrator"
+Orch-3 = "Orchestrator"
+
+[PrefillGPU]
+tick_per_clock = 1
+process_time = 40
+start = 0
+capacity = 17179869184
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Switch-0]
+delay = 25
+
+[Switch-1]
+delay = 25
+
+[DecodeGPU-0]
+tick_per_clock = 1
+process_time = 40
+start = 17179869184
+capacity = 17179869184
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DecodeGPU-1]
+tick_per_clock = 1
+process_time = 40
+start = 21474836480
+capacity = 17179869184
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DecodeGPU-2]
+tick_per_clock = 1
+process_time = 40
+start = 25769803776
+capacity = 17179869184
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[DecodeGPU-3]
+tick_per_clock = 1
+process_time = 40
+start = 30064771072
+capacity = 17179869184
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Orch-0]
+decompose_delay = 50
+schedule_delay = 10
+cmd_queue_capacity = 64
+max_outstanding = 32
+max_outstanding_reads = 32
+max_outstanding_writes = 32
+block_size = 4096
+pipeline = true
+num_ops = 4
+transfer_size = 67108864
+src_device = "PrefillGPU"
+dst_device = "DecodeGPU-0"
+src_base_addr = 0
+dst_base_addr = 17179869184
+
+[Orch-1]
+decompose_delay = 50
+schedule_delay = 10
+cmd_queue_capacity = 64
+max_outstanding = 32
+max_outstanding_reads = 32
+max_outstanding_writes = 32
+block_size = 4096
+pipeline = true
+num_ops = 4
+transfer_size = 67108864
+src_device = "PrefillGPU"
+dst_device = "DecodeGPU-1"
+src_base_addr = 0
+dst_base_addr = 21474836480
+
+[Orch-2]
+decompose_delay = 50
+schedule_delay = 10
+cmd_queue_capacity = 64
+max_outstanding = 32
+max_outstanding_reads = 32
+max_outstanding_writes = 32
+block_size = 4096
+pipeline = true
+num_ops = 4
+transfer_size = 67108864
+src_device = "PrefillGPU"
+dst_device = "DecodeGPU-2"
+src_base_addr = 0
+dst_base_addr = 25769803776
+
+[Orch-3]
+decompose_delay = 50
+schedule_delay = 10
+cmd_queue_capacity = 64
+max_outstanding = 32
+max_outstanding_reads = 32
+max_outstanding_writes = 32
+block_size = 4096
+pipeline = true
+num_ops = 4
+transfer_size = 67108864
+src_device = "PrefillGPU"
+dst_device = "DecodeGPU-3"
+src_base_addr = 0
+dst_base_addr = 30064771072
+
+

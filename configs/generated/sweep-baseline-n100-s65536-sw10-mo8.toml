@@ -1,0 +1,69 @@
+max_clock = 50000000
+clock_granu = 1
+log_level = "INFO"
+log_name = "/home/weontaek.na/wspace/sglang/assets/mit/dcs_nxt/dcs_nxt_cxl/experiments/sim/ESF/output/sweep-baseline-n100-s65536-sw10-mo8.csv"
+edges = [
+    [
+        "Host",
+        "Switch-0",
+    ],
+    [
+        "Switch-0",
+        "Mem-0",
+    ],
+    [
+        "Switch-1",
+        "Mem-1",
+    ],
+    [
+        "Switch-0",
+        "Switch-1",
+    ],
+]
+
+[devices]
+Mem-0 = "DRAMsim3Interface"
+Mem-1 = "DRAMsim3Interface"
+Switch-0 = "Switch"
+Switch-1 = "Switch"
+Host = "Requester"
+
+[Mem-0]
+tick_per_clock = 1
+process_time = 40
+start = 0
+capacity = 1073741824
+wr_ratio = 0.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Mem-1]
+tick_per_clock = 1
+process_time = 40
+start = 1073741824
+capacity = 1073741824
+wr_ratio = 1.0
+config_file = "DRAMsim3/configs/DDR4_8Gb_x8_3200.ini"
+output_dir = "output"
+
+[Switch-0]
+delay = 10
+
+[Switch-1]
+delay = 10
+
+[Host]
+q_capacity = 8
+cache_capacity = 8192
+cache_delay = 12
+issue_delay = 0
+coherent = false
+burst_size = 1
+block_size = 64
+interleave_type = "stream"
+interleave_param = 102400
+hot_req_ratio = 0.5
+hot_region_ratio = 0.5
+trace_file = ""
+
+
